@@ -1,0 +1,112 @@
+@use "_vars.scss";
+@use "_base.scss";
+@use "mixins";
+
+a {
+  color: black;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5px;
+
+  @include min-tablet {
+    padding: 0 16px;
+  }
+}
+
+.caveat {
+  font-family: Caveat;
+  font-weight: 600;
+  color: #0f0f0f;
+}
+
+.img {
+  display: block;
+}
+
+.screen {
+  @include flex-list-column;
+
+  & {
+    flex-shrink: 0;
+    min-height: 100dvh;
+    position: relative;
+  }
+}
+
+.text-m {
+  font-weight: 400;
+  font-size: 18px;
+
+  @include min-tablet {
+    font-size: 22px;
+  }
+}
+
+.text-l {
+  font-size: clamp(32px,10vw,54px);
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.daub-line {
+  position: relative;
+  margin: 0 auto;
+
+  &::before {
+    position: absolute;
+    content: url("~/assets/icons/daub.svg?url");
+
+    bottom: 45%;
+    width: 60px;
+    right: 90%;
+  }
+
+  @include min-mobile {
+    &::before {
+      width: 90px;
+    }
+  }
+
+  @include min-tablet {
+    &::before {
+      width: 120px;
+    }
+  }
+}
+
+.daub-line_right::before {
+  transform: scaleX(-1);
+  left: 90%;
+  right: initial;
+}
+
+.form__label {
+  @include flex-list-column(8px, flex-start);
+  width: 100%;
+}
+
+.form__input {
+  flex: 1;
+  outline: none;
+  border: 1px solid #b2be3f;
+  border-radius: 15px;
+  padding: 5px 16px;
+  height: 36px;
+  width: 100%;
+}
+
+.form__wrapper-input {
+  @include flex-list(16px, center);
+
+  & {
+    width: 100%;
+  }
+}

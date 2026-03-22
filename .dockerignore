@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+.nuxt
+.output
+.cache
+.git
+.env
+.env.local
+.env.*.local
+Dockerfile*
+docker-compose*
+
