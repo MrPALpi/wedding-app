@@ -116,7 +116,7 @@ async function onSubmit() {
       </div>
     </div>
   </v-dialog>
-  <div class="application-form" :class="{'application-form_loading': loading}">
+  <div class="application-form container" :class="{'application-form_loading': loading}">
 		<span
         class="application-form__title daub-line daub-line_right caveat text-l"
     >
@@ -322,7 +322,7 @@ async function onSubmit() {
 
   & {
     padding-top: 30px;
-    background-image: url('flower-5.png');
+    background-image: url('/flower-5.png');
     background-repeat: no-repeat;
     background-position: 25% 0;
     background-size: 120px;
@@ -386,7 +386,7 @@ async function onSubmit() {
 
 .application-form__content-btn_add,
 .application-form__submit {
-  background: #b2be3f;
+  background: var(--olive);
 
   &:hover:not(:disabled) {
     background: #9faa39;
@@ -424,6 +424,7 @@ async function onSubmit() {
   border-radius: 16px;
   padding: 8px;
   color: white;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .application-form__content-loader {
@@ -433,7 +434,7 @@ async function onSubmit() {
   height: 36px;
   top: var(--application-form__content-loader);
   left: var(--application-form__content-loader);
-  color: #8a9b3c;
+  color: var(--olive);
   animation: spin 1s infinite linear;
 }
 

@@ -24,7 +24,7 @@
 }
 
 @mixin flex-list-wrap($gap: null, $align: null, $justify: null) {
-  @include flex-list($gap);
+  @include flex-list($gap, $align, $justify);
 
   & {
     flex-wrap: wrap;

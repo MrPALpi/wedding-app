@@ -33,8 +33,7 @@ const rotate = computed<string>(() => {
         Узнаёте<br> этих малышей?
       </div>
       <div class="first-screen__flower-container">
-<!--        <img class="first-screen__flower img" src="flower.png" width="" alt="">-->
-        <nuxt-img class="first-screen__flower img" src="flower-2.png" width="" alt=""/>
+        <nuxt-img class="first-screen__flower img" src="/flower.png" width="" alt=""/>
       </div>
     </div>
   </div>
@@ -45,7 +44,21 @@ const rotate = computed<string>(() => {
 @use "~/assets/styles/animations" as *;
 
 .first-screen {
+  position: relative;
   padding-top: 20px;
+
+  &::before {
+    position: absolute;
+    content: url("~/assets/icons/curve-line.svg");
+    left: 0;
+    bottom: 0;
+    width: 35%;
+    max-width: 350px;
+    min-width: 150px;
+    aspect-ratio: 1 / 1;
+    transform: translateX(-15px) rotate(-25deg);
+    z-index: -1;
+  }
 }
 
 .first-screen__container,

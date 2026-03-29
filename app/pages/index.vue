@@ -13,5 +13,9 @@
   @include min-tablet {
     gap: 100px;
   }
+
+  & {
+    padding-bottom: 50px;
+  }
 }
 </style>

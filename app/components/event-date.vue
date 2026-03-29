@@ -1,16 +1,18 @@
 <template>
   <div class="event-date">
-    <nuxt-img class="event-date__icon" src="flower.png" alt=""/>
-    <div class="event-date__title">
-      Воскресенье | 19 июля
-    </div>
-    <div class="event-date__list">
-      <div
-          v-for="i in [12, 13, 14, 15, 16, 18, 19]" :key="i"
-          class="event-date__item"
-          :class="{'event-date__item_active': i === 19}"
-      >
-        {{ i }}
+    <div class="event-date__container container">
+      <nuxt-img class="event-date__icon" src="/flower-1.png" alt=""/>
+      <div class="event-date__title">
+        Воскресенье | 19 июля
+      </div>
+      <div class="event-date__list">
+        <div
+            v-for="i in [12, 13, 14, 15, 16, 18, 19]" :key="i"
+            class="event-date__item"
+            :class="{'event-date__item_active': i === 19}"
+        >
+          {{ i }}
+        </div>
       </div>
     </div>
   </div>
@@ -20,8 +22,6 @@
 </script>
 <style lang="scss">
 .event-date {
-  @include flex-list-column(50px);
-
   @include min-tablet {
     padding: 50px 0 60px;
   }
@@ -32,6 +32,10 @@
     overflow-x: hidden;
     z-index: 1;
   }
+}
+
+.event-date__container {
+  @include flex-list-column(50px);
 }
 
 .event-date__icon {

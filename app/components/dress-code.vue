@@ -1,75 +1,78 @@
 <script lang="ts" setup>
-const colorsWoman: string[] = [
-  "#fbe5b3",
-  "#b5b575",
-  "#e6b8ba",
-  "#767a57",
+import pink from "/pink.webp";
+import green from "/green.webp";
+import brown from "/brown.webp";
+import yellow from "/yellow.webp";
+import pinkLight from "/pink-light.webp";
+import greenLight from "/green-light.webp";
+import yellowLight from "/yellow-light.webp";
+
+const colors: string[] = [
+  yellowLight,
+  yellow,
+  pink,
+  pinkLight,
+  greenLight,
+  green,
+  brown,
 ];
 
-const colorsMan: string[] = [
-  "#8f7c51",
-  "#dac3a3",
-  "#f3e7cf",
-  "#91714a",
-];
 </script>
 
 <template>
   <div class="dress-code">
-    <span class="dress-code__title daub-line daub-line_right caveat text-l">
+    <div class="dress-code__container container">
+      <span class="dress-code__title daub-line daub-line_right caveat text-l">
       дресс-код
     </span>
-    <div class="dress-code__text text-m">
-      Мы очень старались сделать&nbsp;праздник&nbsp;красивым<br>
-      И будем рады, если&nbsp;в&nbsp;своих&nbsp;нарядах<br>
-      Вы поддержите цветовую гамму&nbsp;нашей&nbsp;свадьбы:
+      <div class="dress-code__text text-m">
+        Мы очень старались сделать&nbsp;праздник&nbsp;красивым<br>
+        И будем рады, если&nbsp;в&nbsp;своих&nbsp;нарядах<br>
+        Вы поддержите цветовую гамму&nbsp;нашей&nbsp;свадьбы:
+      </div>
+
+      <div class="dress-code__colors">
+        <nuxt-img
+            v-for="(color, ind) in colors"
+            :key="ind"
+            :src="color"
+            class="dress-code__colors-item"
+        />
+      </div>
+
+      <nuxt-img src="dresscode-girls.png"  class="dress-code__img dress-code__img_girls img"/>
+
+      <div class="text-m">
+        Будем признательны, если в белом будет только невеста.
+      </div>
+
+      <nuxt-img src="dresscode-mens.png"  class="dress-code__img dress-code__img_boys img"/>
+
     </div>
-
-    <div class="dress-code__colors">
-      <div
-          v-for="(color, ind) in colorsWoman"
-          :key="ind"
-          :style="`--dress-code-color: ${color}`"
-          class="dress-code__colors-item"
-      />
-    </div>
-
-    <nuxt-img src="dresscode-girls.png"  class="dress-code__img img"/>
-
-    <div class="text-m">
-      Будем признательны, если в белом будет только невеста.
-    </div>
-
-    <div class="dress-code__colors">
-      <div
-          v-for="(color, ind) in colorsMan"
-          :key="ind"
-          :style="`--dress-code-color: ${color}`"
-          class="dress-code__colors-item"
-      />
-    </div>
-
-    <nuxt-img src="dresscode-mens.png"  class="dress-code__img img"/>
 
   </div>
 </template>
 
 <style lang="scss">
 .dress-code {
-  @include flex-list-column(30px, null, center);
-
   @include min-tablet {
     padding-top: 60px;
+    background-position: 15% 0, 85% 0;
   }
 
   & {
-    text-align: center;
     padding-top: 30px;
-    background-image: url('flower-stem.png'), url("flower-stem-3.png");
+    background-image: url('/flower-stem.png'), url("/flower-stem-3.png");
     background-repeat: no-repeat;
-    background-position: 15% 0, right 0;
+    background-position: 15% 0, 100% 0;
     background-size: 80px;
+    text-align: center;
   }
+}
+
+.dress-code__container {
+  @include flex-list-column(30px, null, center);
+
 }
 
 .dress-code__title {
@@ -86,20 +89,41 @@ const colorsMan: string[] = [
 }
 
 .dress-code__colors {
-  @include flex-list(16px, null, center);
+  @include flex-list-wrap(16px, center, center);
+
+  & {
+    max-width: 680px;
+    margin: 0 auto;
+  }
 }
 
 .dress-code__colors-item {
-  flex: 1 1 150px;
+  flex: 0 1 128px;
   aspect-ratio: 1/ 1;
-  max-width: 150px;
+  max-width: 128px;
   border-radius: 50%;
-  background: var(--dress-code-color);
+
+  @include min-tablet {
+    flex: 0 1 150px;
+    max-width: 150px;
+  }
 }
 
 .dress-code__img {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
+  background-position: 0 0,100% 0,100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 80px;
 }
+
+.dress-code__img_girls {
+  background-image: url("/flower-stem.png"),url("/flower-stem-1.png"), url("/flower-6.png"), url("/flower-2.png");
+}
+
+.dress-code__img_boys {
+  background-image: url("/flower-4.png"),url("/flower-stem-2.png"), url("/flower-7.png"), url("/flower-3.png");
+}
+
 </style>

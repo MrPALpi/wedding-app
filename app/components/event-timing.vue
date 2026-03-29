@@ -17,39 +17,36 @@ const dateList = [
 </script>
 <template>
   <div class="event-timing">
-    <div
-        v-for="(item, ind) in dateList"
-        :key="ind"
-        :style="`--event-time: '${item.time}'`"
-        class="event-timing__item"
-        :class="`event-timing__item_${ind}`"
-    >
-      <div class="event-timing__content">
-        <div class="event-timing__time">
-          {{ item.time }}
-        </div>
-        <div class="event-timing__title">
-          {{ item.title }}
+    <div class="event-timing__container">
+      <div
+          v-for="(item, ind) in dateList"
+          :key="ind"
+          :style="`--event-time: '${item.time}'`"
+          class="event-timing__item"
+          :class="`event-timing__item_${ind}`"
+      >
+        <div class="event-timing__content">
+          <div class="event-timing__time">
+            {{ item.time }}
+          </div>
+          <div class="event-timing__title">
+            {{ item.title }}
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
 <style lang="scss">
-.event-timing,
-.event-timing__item {
-  @include flex-list-column;
-}
-
 .event-timing {
   position: relative;
-  gap: 32px;
   margin: 0 auto;
   width: 100%;
   padding: 20px 30px;
   --event-timing-size: clamp(55px, 10vw, 90px);
-  background-image: url('flower-5.png'), url("flower-stem-2.png"), url("flower-1.png");
+  background-image: url('/flower-5.png'), url("/flower-stem-2.png"), url("/flower-1.png");
   background-repeat: no-repeat;
   background-position: 10% 0, right 30%, center 70%;
   background-size: var(--event-timing-size);
@@ -63,7 +60,15 @@ const dateList = [
     padding: 30px 45px;
     max-width: 80%;
   }
+}
 
+.event-timing__container,
+.event-timing__item {
+  @include flex-list-column;
+}
+
+.event-timing__container {
+  gap: 32px;
 }
 
 .event-timing__item {

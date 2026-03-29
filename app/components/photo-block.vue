@@ -13,38 +13,39 @@ defineProps<{
 
 <template>
   <div class="photo-block">
-    <div class="photo-block__container photo-block__container_wife">
-      <nuxt-img
-          :src="firstPhoto.src"
-          width="350"
-          class="photo-block__img img"
-          :loading="loading"
-      />
-<!--      <div class="photo-block__text caveat">{{ firstPhoto.title }}</div>-->
+    <div class="photo-block__content container">
+      <div class="photo-block__container photo-block__container_wife">
+        <nuxt-img
+            :src="firstPhoto.src"
+            width="350"
+            class="photo-block__img img"
+            :loading="loading"
+        />
+      </div>
+      <div class="photo-block__container photo-block__container_husband">
+        <nuxt-img
+            :src="secondPhoto.src"
+            width="350"
+            class="photo-block__img img"
+            :loading="loading"
+        />
+      </div>
     </div>
-    <div class="photo-block__container photo-block__container_husband">
-      <nuxt-img
-          :src="secondPhoto.src"
-          width="350"
-          class="photo-block__img img"
-          :loading="loading"
-      />
-<!--      <div class="photo-block__text caveat">{{ secondPhoto.title }}</div>-->
-    </div>
+
   </div>
 </template>
 
 <style lang="scss">
 .photo-block {
-  @include flex-list;
-
-  & {
-    padding: 0 20px;
-  }
+    padding: 20px;
 
   @include min-tablet {
-    padding: initial;
+    padding: 20px 0;
   }
+}
+
+.photo-block__content {
+  @include flex-center-horiz;
 }
 
 .photo-block__container {
