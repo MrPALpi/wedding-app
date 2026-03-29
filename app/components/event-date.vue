@@ -1,6 +1,6 @@
 <template>
   <div class="event-date">
-    <img class="event-date__icon" src="~/assets/icons/green-flower.svg?url" alt="" loading="lazy">
+    <nuxt-img class="event-date__icon" src="flower.png" alt=""/>
     <div class="event-date__title">
       Воскресенье | 19 июля
     </div>
@@ -38,8 +38,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 50px;
-  height: 50px;
+  --event-date-icon: clamp(70px, 15vw, 120px);
+  width: var(--event-date-icon);
+  height: var(--event-date-icon);
+  z-index: -1;
 }
 
 .event-date__title {

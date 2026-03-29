@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 interface photoBlock {
   src: string;
-  title: string;
+  // title: string;
 }
 
 defineProps<{
@@ -20,7 +20,7 @@ defineProps<{
           class="photo-block__img img"
           :loading="loading"
       />
-      <div class="photo-block__text caveat">{{ firstPhoto.title }}</div>
+<!--      <div class="photo-block__text caveat">{{ firstPhoto.title }}</div>-->
     </div>
     <div class="photo-block__container photo-block__container_husband">
       <nuxt-img
@@ -29,7 +29,7 @@ defineProps<{
           class="photo-block__img img"
           :loading="loading"
       />
-      <div class="photo-block__text caveat">{{ secondPhoto.title }}</div>
+<!--      <div class="photo-block__text caveat">{{ secondPhoto.title }}</div>-->
     </div>
   </div>
 </template>

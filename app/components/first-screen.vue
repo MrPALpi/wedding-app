@@ -20,8 +20,9 @@ const rotate = computed<string>(() => {
   <div class="first-screen screen">
     <div class="first-screen__container container">
       <photo-block
-          :first-photo="{src: 'polaroid.png', title: 'Невеста'}"
-          :second-photo="{src: 'polaroid.png', title: 'Жених'}"
+          class="first-screen__photo"
+          :first-photo="{src: 'danira-polaroid.png', }"
+          :second-photo="{src: 'sasha-polaroid.png', }"
       />
       <div class="first-screen__names caveat">
         <svgo-heart class="first-screen__heart"/>
@@ -32,7 +33,8 @@ const rotate = computed<string>(() => {
         Узнаёте<br> этих малышей?
       </div>
       <div class="first-screen__flower-container">
-        <img class="first-screen__flower img" src="~/assets/icons/flower.svg?url" width="" alt="">
+<!--        <img class="first-screen__flower img" src="flower.png" width="" alt="">-->
+        <nuxt-img class="first-screen__flower img" src="flower-2.png" width="" alt=""/>
       </div>
     </div>
   </div>
@@ -108,7 +110,7 @@ const rotate = computed<string>(() => {
 .first-screen__names {
   position: relative;
   z-index: 2;
-  color: #b3bf3d;
+  color: var(--olive);
   font-size: clamp(62px, 8vw, 100px);
   font-weight: 700;
 }

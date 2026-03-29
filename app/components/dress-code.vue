@@ -65,6 +65,10 @@ const colorsMan: string[] = [
   & {
     text-align: center;
     padding-top: 30px;
+    background-image: url('flower-stem.png'), url("flower-stem-3.png");
+    background-repeat: no-repeat;
+    background-position: 15% 0, right 0;
+    background-size: 80px;
   }
 }
 

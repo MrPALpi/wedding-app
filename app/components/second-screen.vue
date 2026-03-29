@@ -22,8 +22,8 @@
       <event-timing class="second-screen__timing" />
       <photo-block
           class="second-screen__photo-block"
-          :first-photo="{src:'polaroid.png', title: 'Малыши'}"
-          :second-photo="{src:'polaroid.png', title: 'Подросли'}"
+          :first-photo="{src:'polaroid.png'}"
+          :second-photo="{src:'polaroid.png'}"
       />
       <dress-code class="second-screen__dress-code" />
       <application-form  />

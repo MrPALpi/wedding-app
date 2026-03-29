@@ -48,6 +48,11 @@ const dateList = [
   margin: 0 auto;
   width: 100%;
   padding: 20px 30px;
+  --event-timing-size: clamp(55px, 10vw, 90px);
+  background-image: url('flower-5.png'), url("flower-stem-2.png"), url("flower-1.png");
+  background-repeat: no-repeat;
+  background-position: 10% 0, right 30%, center 70%;
+  background-size: var(--event-timing-size);
 
   @include min-mobile {
     padding: 20px 45px;

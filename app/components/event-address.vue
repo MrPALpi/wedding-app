@@ -1,6 +1,6 @@
 <template>
   <div class="event-address text-m">
-    <img src="~/assets/icons/green-flower.svg?url" alt="" class="event-address__img">
+    <nuxt-img class="event-address__img img" src="flower-stem-2.png" width="90" alt=""/>
     <nuxt-link class="event-address__ text-m" to="https://listvennaya96.ru/" target="_blank">
       ГЛК «Лиственная»
     </nuxt-link>
@@ -16,12 +16,13 @@
 </script>
 <style lang="scss">
 .event-address {
-  @include flex-list-column(10px);
+  @include flex-list-column(10px, center);
 
   & {
     position: relative;
     z-index: 1;
     text-align: center;
+
   }
 }
 
@@ -31,11 +32,10 @@
   top: -25%;
   z-index: -1;
   width: 50px;
-  height: 50px;
+  transform: scaleX(-1);
 
   @include min-tablet {
     width: 90px;
-    height: 90px;
   }
 }
 </style>
