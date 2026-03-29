@@ -50,6 +50,7 @@ const dateList = [
   background-repeat: no-repeat;
   background-position: 10% 0, right 30%, center 70%;
   background-size: var(--event-timing-size);
+  overflow: hidden;
 
   @include min-mobile {
     padding: 20px 45px;
