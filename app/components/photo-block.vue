@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 interface photoBlock {
   src: string;
-  // title: string;
 }
 
 defineProps<{
   firstPhoto: photoBlock;
   secondPhoto: photoBlock;
-  loading?: HTMLImageElement["loading"];
 }>();
 </script>
 
@@ -17,17 +15,21 @@ defineProps<{
       <div class="photo-block__container photo-block__container_wife">
         <nuxt-img
             :src="firstPhoto.src"
-            width="350"
+            width="300"
+            height="auto"
             class="photo-block__img img"
-            :loading="loading"
+            format="webp"
+            fetchpriority="high"
         />
       </div>
       <div class="photo-block__container photo-block__container_husband">
         <nuxt-img
             :src="secondPhoto.src"
-            width="350"
+            width="300"
+            height="auto"
             class="photo-block__img img"
-            :loading="loading"
+            format="webp"
+            fetchpriority="high"
         />
       </div>
     </div>

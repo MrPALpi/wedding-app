@@ -3,7 +3,7 @@ import { useWindowScroll } from "@vueuse/core";
 
 const { y } = useWindowScroll();
 
-const TURNOVER_COUNT = 4;
+const TURNOVER_COUNT = 8;
 
 const rotate = computed<string>(() => {
   const scroll = y.value;
@@ -18,26 +18,27 @@ const rotate = computed<string>(() => {
 
 <template>
   <div class="first-screen screen">
-    <div class="first-screen__container container">
-      <photo-block
-          class="first-screen__photo"
-          :first-photo="{src: 'danira-polaroid.png', }"
-          :second-photo="{src: 'sasha-polaroid.png', }"
-      />
-      <div class="first-screen__names caveat">
-        <svgo-heart class="first-screen__heart"/>
-        Александр <br>
-        + Данира
+    <transition name="fade" appear>
+      <div class="first-screen__container container">
+        <photo-block
+            class="first-screen__photo"
+            :first-photo="{src: 'danira-polaroid.png', }"
+            :second-photo="{src: 'sasha-polaroid.png', }"
+        />
+        <div class="first-screen__names caveat">
+          <svgo-heart class="first-screen__heart"/>
+          Александр <br>
+          + Данира
+        </div>
+        <div class="first-screen__bottom caveat">
+          Узнаёте<br> этих малышей?
+        </div>
+        <div class="first-screen__flower-container">
+          <nuxt-img class="first-screen__flower img" src="/flower.png" width="" alt=""/>
+        </div>
       </div>
-      <div class="first-screen__bottom caveat">
-        Узнаёте<br> этих малышей?
-      </div>
-      <div class="first-screen__flower-container">
-        <nuxt-img class="first-screen__flower img" src="/flower.png" width="" alt=""/>
-      </div>
-    </div>
+    </transition>
   </div>
-
 </template>
 
 <style lang="scss">
@@ -61,63 +62,24 @@ const rotate = computed<string>(() => {
   }
 }
 
-.first-screen__container,
-.first-screen__block-list {
-  @include flex-list;
+.first-screen__photo {
+  flex: 100%;
+
+  @include min-mobile {
+    flex: initial;
+  }
 }
 
 .first-screen__container {
-  flex: 1;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 16px;
-}
+  @include flex-list;
 
-.first-screen__block-list {
-  padding: 0 20px;
-
-  @include min-tablet {
-    padding: initial;
+  & {
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 16px;
   }
-}
-
-.first-screen__block {
-  flex: 0 1 300px;
-  min-width: 0;
-}
-
-.first-screen__block_wife {
-  transform: rotate(355deg);
-
-  .first-screen__block-text {
-    color: #fea8c3;
-  }
-}
-
-.first-screen__block_husband {
-  margin: 60px 0 0 -20px;
-  transform: rotate(5deg);
-
-  @include min-mobile {
-    margin-top: 120px;
-  }
-
-  .first-screen__block-text {
-    color: #c9c1f9;
-    text-align: right;
-  }
-}
-
-.first-screen__block-img {
-  width: 100%;
-  max-width: 300px;
-}
-
-.first-screen__block-text {
-  font-size: 32px;
-  font-weight: 500;
-  padding: 10px 20% 0;
 }
 
 .first-screen__names {
