@@ -132,9 +132,13 @@ const rotate = computed<string>(() => {
   position: absolute;
   left: calc(50% - 50px);
   top: -100px;
-  font-size: 100px;
+  font-size: 80px;
   color: #ffa9c3;
   animation: pulse 0.7s infinite ease-in-out;
+
+  @include min-tablet {
+    font-size: 100px;
+  }
 }
 
 .first-screen__bottom {

@@ -32,7 +32,7 @@ a {
 
   & {
     flex-shrink: 0;
-    min-height: 100dvh;
+    min-height: 100svh;
     position: relative;
   }
 }
@@ -48,6 +48,10 @@ a {
 
 .text-l {
   font-size: clamp(32px,10vw,54px);
+}
+
+.text-center {
+  text-align: center;
 }
 
 .btn {

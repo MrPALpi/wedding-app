@@ -40,6 +40,14 @@
     />
     <dress-code class="second-screen__dress-code"/>
     <application-form/>
+    <div class="second-screen__contacts container text-m text-center">
+      <span class="caveat text-l daub-line">Вопросы</span><br>
+      <span class="second-screen__contacts-container">
+        Если у вас остались вопросы или желания по поздравлению, то можете связаться с нашими организаторами:
+        <br>
+        <a class="second-screen__contacts-link text-l caveat" href="tel:">Полина<br>&<br> Лола</a>
+      </span>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -122,5 +130,21 @@
 
 .second-screen__invitation {
   text-align: center;
+}
+
+.second-screen__contacts-link {
+  @include flex-center;
+
+  & {
+    margin: 30px auto 0;
+    width: max-content;
+    padding: 30px;
+    line-height: 85%;
+    aspect-ratio: 1 / 1;
+    background: var(--olive);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+  }
 }
 </style>
