@@ -12,26 +12,30 @@ defineProps<{
 <template>
   <div class="photo-block">
     <div class="photo-block__content container">
+      <transition name="photo-block__container" appear>
       <div class="photo-block__container photo-block__container_wife">
-        <nuxt-img
-            :src="firstPhoto.src"
-            width="300"
-            height="auto"
-            class="photo-block__img img"
-            format="webp"
-            fetchpriority="high"
-        />
+          <nuxt-img
+              :src="firstPhoto.src"
+              width="300"
+              height="auto"
+              class="photo-block__img img"
+              format="webp"
+              fetchpriority="high"
+          />
       </div>
+      </transition>
+      <transition name="photo-block__container" appear>
       <div class="photo-block__container photo-block__container_husband">
-        <nuxt-img
-            :src="secondPhoto.src"
-            width="300"
-            height="auto"
-            class="photo-block__img img"
-            format="webp"
-            fetchpriority="high"
-        />
+          <nuxt-img
+              :src="secondPhoto.src"
+              width="300"
+              height="auto"
+              class="photo-block__img img"
+              format="webp"
+              fetchpriority="high"
+          />
       </div>
+      </transition>
     </div>
 
   </div>
@@ -40,6 +44,7 @@ defineProps<{
 <style lang="scss">
 .photo-block {
     padding: 20px;
+    overflow: hidden;
 
   @include min-tablet {
     padding: 20px 0;
@@ -82,6 +87,19 @@ defineProps<{
 .photo-block__img {
   width: 100%;
   max-width: 300px;
+}
+
+.photo-block__container-enter-active {
+  &.photo-block__container_husband {
+    transition-delay: 0.3s;
+  }
+
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.photo-block__container-enter-from {
+  opacity: 0;
+  transform: translateY(-30px) rotate(0);
 }
 
 .photo-block__text {

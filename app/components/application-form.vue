@@ -124,7 +124,7 @@ async function onSubmit() {
 		</span>
 
     <div class="application-form__desc text-m">
-      Пожалуйста, заполните анкету ниже до&nbsp;01.05.2026,<br>
+      Пожалуйста, заполните анкету ниже до&nbsp;01.06.2026,<br>
       это нам поможет лучше подготовиться к&nbsp;нашей встрече:
     </div>
 
@@ -359,7 +359,7 @@ async function onSubmit() {
     width: 100%;
     height: 3px;
     transform: translateY(-50%);
-    background: #b2be3f;
+    background: #de5d83;
     z-index: -1;
     border-radius: 16px;
     transition: background-color 0.2s ease-in-out;
@@ -386,14 +386,14 @@ async function onSubmit() {
 
 .application-form__content-btn_add,
 .application-form__submit {
-  background: var(--olive);
+  background: #de5d83;
 
   &:hover:not(:disabled) {
-    background: #9faa39;
+    background: #df4b78;
   }
 
   &:active:not(:disabled) {
-    background: #8c9833;
+    background: #dc3567;
   }
 
   &:disabled {

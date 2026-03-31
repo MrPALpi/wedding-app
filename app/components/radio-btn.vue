@@ -42,7 +42,7 @@ const modelValue = defineModel<boolean | null>("modelValue", { default: null });
   @include flex-center;
 
   & {
-    border: 2px solid #B2BE3FFF;
+    border: 2px solid #de5d83;
     height: 24px;
     width: 24px;
     border-radius: 50%;
@@ -54,7 +54,7 @@ const modelValue = defineModel<boolean | null>("modelValue", { default: null });
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #B2BE3FFF;
+    background: #de5d83;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }
