@@ -39,11 +39,13 @@ const rotate = computed<string>(() => {
         </div>
       </transition>
 
-      <transition name="first-screen__bottom" appear>
-        <div class="first-screen__bottom caveat">
-          Узнаёте<br> этих малышей?
-        </div>
-      </transition>
+      <client-only>
+        <transition name="first-screen__bottom" appear>
+          <div class="first-screen__bottom caveat">
+            Узнаёте<br> этих малышей?
+          </div>
+        </transition>
+      </client-only>
 
       <div class="first-screen__flower-container">
         <nuxt-img class="first-screen__flower img" src="/flower.png" width="" alt=""/>
