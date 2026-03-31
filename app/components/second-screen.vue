@@ -39,10 +39,20 @@
         :second-photo="{src:'we-right.png'}"
     />
     <dress-code class="second-screen__dress-code"/>
+
+    <div class="second-screen__note container text-center">
+      <span class="second-screen__note-title caveat text-l daub-line">Примечание</span><br>
+      <span class="second-screen__note-text text-m">
+        Мы решили пригласить все семейные пары без детей,
+        чтобы у Вас была возможность расслабиться и насладиться нашим днём.
+        По возможности просим Вас заранее позаботиться с кем оставить своих детей
+      </span>
+    </div>
+
     <application-form/>
-    <div class="second-screen__contacts container text-m text-center">
+    <div class="second-screen__contacts container text-center">
       <span class="caveat text-l daub-line">Вопросы</span><br>
-      <span class="second-screen__contacts-container">
+      <span class="second-screen__contacts-container  text-m">
         Если у вас остались вопросы или желания по поздравлению, то можете связаться с нашими организаторами:
         <br>
         <a class="second-screen__contacts-link text-l caveat" href="tel:">Полина<br>&<br> Лола</a>
@@ -78,11 +88,10 @@
   margin: 30px auto 0;
   max-width: 900px;
 
-  background:
-      url("/flower-1.png"),
-      url("/flower-2.png"),
-      url("/flower-3.png"),
-      url("/flower-4.png");
+  background: url("/flower-1.png"),
+  url("/flower-2.png"),
+  url("/flower-3.png"),
+  url("/flower-4.png");
   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
   background-repeat: no-repeat;
   background-size: 80px, 100px, 100px 80px;
@@ -103,14 +112,13 @@
 
 .second-screen__text-important {
   font-size: 26px;
-  color: #839978FF;
+  color: var(--olive);
   white-space: nowrap;
 }
 
 .second-screen__photo-block {
-  background:
-      url("/flower-4.png"),
-      url("/flower-2.png");
+  background: url("/flower-4.png"),
+  url("/flower-2.png");
   background-repeat: no-repeat;
   background-size: 80px;
   background-position: 0 100%, 100% 0;
@@ -130,6 +138,15 @@
 
 .second-screen__invitation {
   text-align: center;
+}
+
+.second-screen__note {
+  padding-top: 30px;
+  max-width: 900px;
+}
+
+.second-screen__contacts {
+  max-width: 900px;
 }
 
 .second-screen__contacts-link {
