@@ -20,7 +20,7 @@ a {
 .caveat {
   font-family: Caveat;
   font-weight: 600;
-  color: #0f0f0f;
+  color: var(--black);
 }
 
 .img {
@@ -100,7 +100,7 @@ a {
 .form__input {
   flex: 1;
   outline: none;
-  border: 1px solid #de5d83;
+  border: 1px solid var(--pink);
   border-radius: 15px;
   padding: 5px 16px;
   height: 36px;

@@ -38,7 +38,7 @@ const modelValue = defineModel<boolean>("modelValue", { default: false });
 
 .checkbox-btn__box {
   position: relative;
-  border: 2px solid #de5d83;
+  border: 2px solid var(--pink);
   height: 24px;
   width: 24px;
   padding: 4px;
@@ -51,7 +51,7 @@ const modelValue = defineModel<boolean>("modelValue", { default: false });
     width: 8px;
     height: 16px;
     border-style: solid;
-    border-color: #de5d83;
+    border-color: var(--pink);
     border-width: 0 2px 2px 0;
     opacity: 0;
     transform: rotate(45deg);

@@ -68,7 +68,7 @@
     border-radius: 10px;
     flex-shrink: 0;
     background-position: center center;
-    border: 2px solid #de5d83;
+    border: 2px solid var(--pink);
     width: 35px;
     height: 35px;
     font-size: 25px;

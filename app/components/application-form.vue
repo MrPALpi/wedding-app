@@ -359,7 +359,7 @@ async function onSubmit() {
     width: 100%;
     height: 3px;
     transform: translateY(-50%);
-    background: #de5d83;
+    background: var(--pink);
     z-index: -1;
     border-radius: 16px;
     transition: background-color 0.2s ease-in-out;
@@ -386,7 +386,7 @@ async function onSubmit() {
 
 .application-form__content-btn_add,
 .application-form__submit {
-  background: #de5d83;
+  background: var(--pink);
 
   &:hover:not(:disabled) {
     background: #df4b78;
