@@ -55,8 +55,23 @@
       <span class="second-screen__contacts-container  text-m">
         Если у вас остались вопросы или желания по поздравлению, то можете связаться с нашими организаторами:
         <br>
-        <a class="second-screen__contacts-link text-l caveat" href="tel:">Полина<br>&<br> Лола</a>
       </span>
+      <div class="second-screen__contacts-list">
+        <organizator-contact
+            src="/polina.jpg"
+            name="Полина"
+            phone="8 (950) 630-24-44"
+            telegram="https://t.me/+79506302444"
+            whatsapp="https://wa.me/+79506302444"
+        />
+        <organizator-contact
+            src="/lolita.jpg"
+            name="Лолита"
+            phone="8 (912) 662-38-88"
+            telegram="https://t.me/+79126623888"
+            whatsapp="https://wa.me/+79126623888"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -88,7 +103,7 @@
   margin: 30px auto 0;
   max-width: 900px;
 
-  background: url("/flower-1.png"),
+  background-image: url("/flower-1.png"),
   url("/flower-2.png"),
   url("/flower-3.png"),
   url("/flower-4.png");
@@ -117,7 +132,7 @@
 }
 
 .second-screen__photo-block {
-  background: url("/flower-4.png"),
+  background-image: url("/flower-4.png"),
   url("/flower-2.png");
   background-repeat: no-repeat;
   background-size: 80px;
@@ -149,19 +164,11 @@
   max-width: 900px;
 }
 
-.second-screen__contacts-link {
-  @include flex-center;
+.second-screen__contacts-list {
+  @include flex-list-wrap(16px, center, space-evenly);
 
   & {
-    margin: 30px auto 0;
-    width: max-content;
-    padding: 30px;
-    line-height: 85%;
-    aspect-ratio: 1 / 1;
-    background: var(--olive);
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
+    margin-top: 32px;
   }
 }
 </style>

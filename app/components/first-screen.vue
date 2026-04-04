@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useWindowScroll } from "@vueuse/core";
+import { useEventListener, useWindowScroll } from "@vueuse/core";
 
 const { y } = useWindowScroll();
 
