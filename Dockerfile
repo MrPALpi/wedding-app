@@ -1,17 +1,15 @@
-FROM oven/bun:1-alpine
-
+FROM oven/bun:latest as base
 WORKDIR /app
 
-# Установим зависимости через Bun
-COPY package.json bun.lockb* ./
-RUN bun install
+# Установка зависимостей
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
-# Скопируем код приложения
+# Сборка проекта
 COPY . .
+RUN bun run build
 
-# Nuxt dev/preview слушает этот порт
+# Запуск приложения
+ENV NODE_ENV=production
 EXPOSE 3000
-
-# Запуск Nuxt в dev-режиме, доступен извне контейнера
-CMD ["bun", "run", "dev", "--", "--port", "3000", "--host", "0.0.0.0"]
-
+CMD ["bun", "start"]

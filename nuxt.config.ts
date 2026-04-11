@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
+  nitro: {
+    preset: "bun",
+  },
   devtools: { enabled: true },
   modules: ["@nuxt/fonts", "@nuxt/image", "nuxt-svgo", "@nuxt/eslint"],
   app: {
