@@ -7,7 +7,7 @@
       </div>
       <div class="event-date__list">
         <div
-            v-for="i in [12, 13, 14, 15, 16, 18, 19]" :key="i"
+            v-for="i in [13, 14, 15, 16, 17, 18, 19]" :key="i"
             class="event-date__item"
             :class="{'event-date__item_active': i === 19}"
         >
