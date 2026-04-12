@@ -322,7 +322,7 @@ async function onSubmit() {
 
   & {
     padding-top: 30px;
-    background-image: url('/flower-5.png');
+    background-image: url('/flower-5.webp');
     background-repeat: no-repeat;
     background-position: 25% 0;
     background-size: 120px;

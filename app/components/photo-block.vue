@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 interface photoBlock {
   src: string;
+  fetchpriority?: "low" | "high" | "auto";
+  placeholder?: boolean;
+  loading?: "lazy";
 }
 
 defineProps<{
@@ -11,7 +14,7 @@ defineProps<{
 
 <template>
   <div class="photo-block">
-    <div class="photo-block__content container">
+    <div class="photo-block__content">
       <transition name="photo-block__container" appear>
       <div class="photo-block__container photo-block__container_wife">
           <nuxt-img
@@ -20,7 +23,9 @@ defineProps<{
               height="auto"
               class="photo-block__img img"
               format="webp"
-              fetchpriority="high"
+              :fetchpriority="firstPhoto.fetchpriority"
+              :placeholder="firstPhoto.placeholder"
+              :loading="firstPhoto.loading"
           />
       </div>
       </transition>
@@ -32,7 +37,9 @@ defineProps<{
               height="auto"
               class="photo-block__img img"
               format="webp"
-              fetchpriority="high"
+              :fetchpriority="secondPhoto.fetchpriority"
+              :placeholder="secondPhoto.placeholder"
+              :loading="secondPhoto.loading"
           />
       </div>
       </transition>
@@ -53,6 +60,10 @@ defineProps<{
 
 .photo-block__content {
   @include flex-center-horiz;
+
+  @include min-tablet {
+    padding: 20px;
+  }
 }
 
 .photo-block__container {

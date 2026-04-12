@@ -46,7 +46,7 @@ const dateList = [
   width: 100%;
   padding: 20px 30px;
   --event-timing-size: clamp(55px, 10vw, 90px);
-  background-image: url('/flower-5.png'), url("/flower-stem-2.png"), url("/flower-1.png");
+  background-image: url('/flower-5.webp'), url("/flower-stem-2.webp"), url("/flower-1.webp");
   background-repeat: no-repeat;
   background-position: 10% 0, right 30%, center 70%;
   background-size: var(--event-timing-size);

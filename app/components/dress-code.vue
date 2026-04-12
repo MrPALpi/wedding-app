@@ -37,16 +37,27 @@ const colors: string[] = [
             :key="ind"
             :src="color"
             class="dress-code__colors-item"
+            loading="lazy"
+            placeholder
         />
       </div>
 
-      <nuxt-img src="dresscode-girls.png"  class="dress-code__img dress-code__img_girls img"/>
+      <nuxt-img
+          src="dresscode-girls.webp"
+          placeholder
+          loading="lazy"
+          class="dress-code__img dress-code__img_girls img"
+      />
 
       <div class="text-m">
         Будем признательны, если в белом будет только невеста.
       </div>
 
-      <nuxt-img src="dresscode-mens.png"  class="dress-code__img dress-code__img_boys img"/>
+      <nuxt-img
+          src="dresscode-mens.webp"
+          placeholder
+          loading="lazy"
+          class="dress-code__img dress-code__img_boys img"/>
 
     </div>
 
@@ -62,7 +73,7 @@ const colors: string[] = [
 
   & {
     padding-top: 30px;
-    background-image: url('/flower-stem.png'), url("/flower-stem-3.png");
+    background-image: url('/flower-stem.webp'), url("/flower-stem-3.webp");
     background-repeat: no-repeat;
     background-position: 15% 0, 100% 0;
     background-size: 80px;
@@ -119,11 +130,11 @@ const colors: string[] = [
 }
 
 .dress-code__img_girls {
-  background-image: url("/flower-stem.png"),url("/flower-stem-1.png"), url("/flower-6.png"), url("/flower-2.png");
+  background-image: url("/flower-stem.webp"),url("/flower-stem-1.webp"), url("/flower-6.webp"), url("/flower-2.webp");
 }
 
 .dress-code__img_boys {
-  background-image: url("/flower-4.png"),url("/flower-stem-2.png"), url("/flower-7.png"), url("/flower-3.png");
+  background-image: url("/flower-4.webp"),url("/flower-stem-2.webp"), url("/flower-7.webp"), url("/flower-3.webp");
 }
 
 </style>

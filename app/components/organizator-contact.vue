@@ -14,7 +14,7 @@ defineProps<{
 
 <template>
   <div class="organizer-contact">
-    <nuxt-img class="organizer-contact__img img" :src="src" :alt="name"/>
+    <nuxt-img class="organizer-contact__img img" loading="lazy" width="180" height="180" :src="src" :alt="name" />
     <div class="organizer-contact__info">
       <div class="organizer-contact__name caveat">
         {{ name }}

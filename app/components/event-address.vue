@@ -1,7 +1,7 @@
 <template>
   <div class="event-address ">
     <div class="event-address__container container text-m">
-      <nuxt-img class="event-address__img img" src="/flower-stem-2.png" width="90" alt=""/>
+      <nuxt-img class="event-address__img img" loading="lazy" src="/flower-stem-2.webp" width="90" alt=""/>
       <nuxt-link class="event-address__ text-m" to="https://listvennaya96.ru/" target="_blank">
         ГЛК «Лиственная»
       </nuxt-link>

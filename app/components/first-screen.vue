@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useEventListener, useWindowScroll } from "@vueuse/core";
+import { useWindowScroll } from "@vueuse/core";
 
 const { y } = useWindowScroll();
 
@@ -21,8 +21,8 @@ const rotate = computed<string>(() => {
     <div class="first-screen__container container">
       <photo-block
           class="first-screen__photo"
-          :first-photo="{src: 'danira-polaroid.png', }"
-          :second-photo="{src: 'sasha-polaroid.png', }"
+          :first-photo="{src: 'danira-polaroid.webp', fetchpriority: 'high' }"
+          :second-photo="{src: 'sasha-polaroid.webp', fetchpriority: 'high' }"
       />
       <transition name="first-screen__names" appear>
         <div class="first-screen__names">
@@ -48,7 +48,7 @@ const rotate = computed<string>(() => {
       </client-only>
 
       <div class="first-screen__flower-container">
-        <nuxt-img class="first-screen__flower img" src="/flower.png" width="" alt=""/>
+        <nuxt-img class="first-screen__flower img" loading="lazy" src="/flower.webp" width="" alt=""/>
       </div>
     </div>
   </div>

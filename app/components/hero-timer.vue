@@ -100,7 +100,7 @@ onUnmounted(intervalDispose);
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url("/hero.jpg");
+  background-image: url("/hero.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

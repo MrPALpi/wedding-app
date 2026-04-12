@@ -14,7 +14,7 @@
     </div>
     <event-date class="second-screen__date"/>
 
-    <img class="second-screen__streak img" src="../assets/icons/streak.svg?url" alt="">
+    <img class="second-screen__streak img" loading="lazy" src="../assets/icons/streak.svg?url" alt="">
 
     <div class="second-screen__invitation">
       <div class="second-screen__invitation-container container caveat text-l">
@@ -28,15 +28,15 @@
 
     <div class="second-screen__place">
       <div class="second-screen__place-container container">
-        <nuxt-img class="second-screen__place-img img" src="listvennaya.png" alt=""/>
+        <nuxt-img class="second-screen__place-img img" loading="lazy" src="listvennaya.webp" alt=""/>
       </div>
     </div>
 
     <event-timing class="second-screen__timing"/>
     <photo-block
         class="second-screen__photo-block"
-        :first-photo="{src:'we-left.png'}"
-        :second-photo="{src:'we-right.png'}"
+        :first-photo="{src:'we-left.webp', fetchpriority: 'auto', loading: 'lazy', placeholder: true }"
+        :second-photo="{src:'we-right.webp', fetchpriority: 'auto', loading: 'lazy', placeholder: true }"
     />
     <dress-code class="second-screen__dress-code"/>
 
@@ -58,14 +58,14 @@
       </span>
       <div class="second-screen__contacts-list">
         <organizator-contact
-            src="/polina.jpg"
+            src="/polina.webp"
             name="Полина"
             phone="8 (950) 630-24-44"
             telegram="https://t.me/+79506302444"
             whatsapp="https://wa.me/+79506302444"
         />
         <organizator-contact
-            src="/lolita.jpg"
+            src="/lolita.webp"
             name="Лолита"
             phone="8 (912) 662-38-88"
             telegram="https://t.me/+79126623888"
@@ -91,7 +91,7 @@
 }
 
 .second-screen__text {
-  background: url("/flower-6.png") no-repeat 100% 100%;
+  background: url("/flower-6.webp") no-repeat 100% 100%;
   background-size: 80px;
 
   @include min-tablet {
@@ -103,10 +103,10 @@
   margin: 30px auto 0;
   max-width: 900px;
 
-  background-image: url("/flower-1.png"),
-  url("/flower-2.png"),
-  url("/flower-3.png"),
-  url("/flower-4.png");
+  background-image: url("/flower-1.webp"),
+  url("/flower-2.webp"),
+  url("/flower-3.webp"),
+  url("/flower-4.webp");
   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
   background-repeat: no-repeat;
   background-size: 80px, 100px, 100px 80px;
@@ -132,8 +132,8 @@
 }
 
 .second-screen__photo-block {
-  background-image: url("/flower-4.png"),
-  url("/flower-2.png");
+  background-image: url("/flower-4.webp"),
+  url("/flower-2.webp");
   background-repeat: no-repeat;
   background-size: 80px;
   background-position: 0 100%, 100% 0;

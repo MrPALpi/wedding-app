@@ -1,7 +1,7 @@
 <template>
   <div class="event-date">
     <div class="event-date__container container">
-      <nuxt-img class="event-date__icon" src="/flower-1.png" alt=""/>
+      <nuxt-img class="event-date__icon" loading="lazy" src="/flower-1.webp" alt="" />
       <div class="event-date__title">
         Воскресенье | 19 июля
       </div>
