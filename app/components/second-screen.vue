@@ -35,8 +35,21 @@
     <event-timing class="second-screen__timing"/>
     <photo-block
         class="second-screen__photo-block"
-        :first-photo="{src:'we-left.webp', fetchpriority: 'auto', loading: 'lazy', placeholder: true }"
-        :second-photo="{src:'we-right.webp', fetchpriority: 'auto', loading: 'lazy', placeholder: true }"
+        :first-photo="{
+          src:'we-left.webp',
+          width:416, height: 486,
+          fetchpriority: 'auto',
+          loading: 'lazy',
+          placeholder: true
+        }"
+        :second-photo="{
+          src:'we-right.webp',
+          width: 416,
+          height:508,
+          fetchpriority: 'auto',
+          loading: 'lazy',
+          placeholder: true
+      }"
     />
     <dress-code class="second-screen__dress-code"/>
 
@@ -48,8 +61,9 @@
         По возможности просим Вас заранее позаботиться с кем оставить своих детей
       </span>
     </div>
-
-    <application-form/>
+    <client-only>
+      <application-form/>
+    </client-only>
     <div class="second-screen__contacts container text-center">
       <span class="caveat text-l daub-line">Вопросы</span><br>
       <span class="second-screen__contacts-container  text-m">

@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
   modules: ["@nuxt/fonts", "@nuxt/image", "nuxt-svgo", "@nuxt/eslint"],
+  routeRules: {
+    "/": { prerender: true },
+  },
   app: {
     head: {
       title: "САША & ДАНИРА",
@@ -27,7 +30,6 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/styles/index.scss"],
   vite: {
-
     // Отключить HMR кеширование
     server: {
       hmr: {

@@ -21,8 +21,21 @@ const rotate = computed<string>(() => {
     <div class="first-screen__container container">
       <photo-block
           class="first-screen__photo"
-          :first-photo="{src: 'danira-polaroid.webp', fetchpriority: 'high' }"
-          :second-photo="{src: 'sasha-polaroid.webp', fetchpriority: 'high' }"
+          animate
+          :first-photo="{
+            src: 'danira-polaroid.webp',
+            fetchpriority: 'high',
+            loading: 'eager',
+            width: 330,
+            height: 401
+          }"
+          :second-photo="{
+            src: 'sasha-polaroid.webp',
+            fetchpriority: 'high',
+            loading: 'eager',
+            width: 330,
+            height: 402
+          }"
       />
       <transition name="first-screen__names" appear>
         <div class="first-screen__names">
