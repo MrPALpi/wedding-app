@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { useWindowScroll } from "@vueuse/core";
 
-const { y } = useWindowScroll();
-
 const TURNOVER_COUNT = 8;
+const visibleLoader = shallowRef<boolean>(true);
+const img = useImage();
+const { y } = useWindowScroll();
 
 const rotate = computed<string>(() => {
   const scroll = y.value;
@@ -14,12 +15,38 @@ const rotate = computed<string>(() => {
 
   return `${(percent * TURNOVER_COUNT).toFixed(2)}deg`;
 });
+
+function preloadHref(photo: { src: string; width: number; height: number }) {
+  return img(photo.src, {
+    width: photo.width,
+    height: photo.height,
+    format: "webp",
+  });
+}
+
+useHead({
+  link: [
+    { rel: "preload", as: "image", href: preloadHref({
+      src: "danira-polaroid.webp",
+      width: 330,
+      height: 401,
+    }) },
+    { rel: "preload", as: "image", href: preloadHref({
+      src: "sasha-polaroid.webp",
+      width: 330,
+      height: 402,
+    }),
+    },
+  ],
+});
 </script>
 
 <template>
+  <v-loader :visible="visibleLoader" />
   <div class="first-screen screen">
     <div class="first-screen__container container">
       <photo-block
+          :load-all="!visibleLoader"
           class="first-screen__photo"
           animate
           :first-photo="{
@@ -36,6 +63,7 @@ const rotate = computed<string>(() => {
             width: 330,
             height: 402
           }"
+          @update:load-all="visibleLoader = !$event"
       />
       <transition name="first-screen__names" appear>
         <div class="first-screen__names">
@@ -79,7 +107,7 @@ const rotate = computed<string>(() => {
   flex: 100%;
 
   @include min-mobile {
-    flex: initial;
+    flex: 50%;
   }
 }
 

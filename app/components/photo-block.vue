@@ -14,13 +14,22 @@ const props = defineProps<{
   secondPhoto: photoBlock;
 }>();
 
+const loadAll = defineModel<boolean>("loadAll", { default: false });
+
 const loadFirst = shallowRef<boolean>(false);
 const loadSecond = shallowRef<boolean>(false);
 
 const loadClass = computed<string | null>(() => {
-  if (!props.animate || (loadFirst.value && loadSecond.value)) return "photo-block__img_visible";
+  if (!props.animate || (loadAll.value)) return "photo-block__img_visible";
 
   return null;
+});
+
+watch([loadFirst, loadSecond], ([first, second]) => {
+  if (first && second) {
+    loadAll.value = true;
+  }
+
 });
 </script>
 
@@ -115,6 +124,7 @@ const loadClass = computed<string | null>(() => {
   height: auto;
   max-width: 300px;
   opacity: 0;
+  will-change: transform, opacity;
   transform: translateY(-30px) rotate(0);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
