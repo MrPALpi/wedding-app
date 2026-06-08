@@ -124,7 +124,7 @@ async function onSubmit() {
 		</span>
 
     <div class="application-form__desc text-m">
-      Пожалуйста, заполните анкету ниже до&nbsp;01.06.2026,<br>
+      Пожалуйста, заполните анкету ниже<br>
       это нам поможет лучше подготовиться к&nbsp;нашей встрече:
     </div>
 
